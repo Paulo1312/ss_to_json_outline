@@ -8,14 +8,11 @@ def ss_to_byte(clear_ss_config: str):
 
 def ss_okam(raw_ss_config):
     ss_text = raw_ss_config.split("#")[0] if raw_ss_config.find("#") != -1 else raw_ss_config
-    #print(ss_text)
     ss_text = ss_text.split("ss://")[1] if ss_text.find("ss://") != -1 else ss_text
-    #print(ss_text)
     return ss_text
 
 def decode_ss_config_to_json(decode_ss_config: str):
     decode_ss_config = decode_ss_config.split(":")
-    #print(decode_ss_config)
     return json.dumps({
       "method"   : decode_ss_config[0],
       "password" : decode_ss_config[1].split("@")[0],
@@ -25,7 +22,6 @@ def decode_ss_config_to_json(decode_ss_config: str):
 
 def ss_to_json(raw_ss_config: str):
     return decode_ss_config_to_json(ss_to_byte(ss_okam(raw_ss_config)))
-
 
 if __name__ == "__main__":
     if len(sys.argv) <= 1:
