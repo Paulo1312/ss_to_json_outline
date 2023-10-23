@@ -12,7 +12,7 @@ Se vi volas skribi datumo en dosiero - vi povas uzati tiun komandon:
 
 `python3 ss_to_json.py *via ligilo* > config.json`
 
-# РУ
+# RU
 
 Привет!
 
